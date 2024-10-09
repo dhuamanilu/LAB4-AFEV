@@ -26,6 +26,10 @@ public ContinueOverLimitV1 : () ==> bool
 ContinueOverLimitV1() == (alarm:= temps(1) > 400 and temps(2) > 400 and temps(3) > 400 and temps(4) > 400;
 return alarm);
 
+public ContinueOverLimitV2 : () ==> bool
+ContinueOverLimitV2() == (alarm:= forall i in set inds temps & temps(i) > 400;
+return alarm);
+
 public MayorEn10 : () ==> bool
 MayorEn10() ==
     (alarm := forall i in set {1, 2, 3, 4} & temps(i+1) = temps(i) + 10;
