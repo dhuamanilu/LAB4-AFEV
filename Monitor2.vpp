@@ -35,6 +35,12 @@ MayorEn10() ==
     (alarm := forall i in set {1, 2, 3, 4} & temps(i+1) = temps(i) + 10;
     return alarm);
 
+public DosMayores: () ==> bool
+DosMayores() ==
+      (alarm := exists x,y in set {1,2,3,4,5} & x <> y and temps(x) > 400 and
+      temps(y) > 400;
+      return alarm);
+
 public TodasEnRango : () ==> bool
 TodasEnRango() ==
     (alarm := forall i in set inds temps & (temps(i) > 50 and temps(i) < 400);
